@@ -22,6 +22,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1e20878d-1b22-4c2b-b38b-ac22f6f2abf1"
+      }
+    },
+    "owner": "tora_joe"
   }
 }
