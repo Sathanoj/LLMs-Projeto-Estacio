@@ -6,17 +6,32 @@ const Chat = () => {
   const [prompt, setPrompt] = useState('');
   const [conversations, setConversations] = useState([]);
 
+  const getAllConversation = async (res) => {
+    res = await axios
+    .get('http://localhost:3001/fullconversation')
+    .then((response) => {
+      console.log(response)
+      return setConversations(response.data)
+    })
+  }
+
   const handleSubmit = async () => {
-    
-    if (!prompt) return;
+    if (!prompt) {
+      console.error('Erro: O campo "prompt" está vazio ou indefinido.');
+      return res.status(400).json({ error: 'O campo "prompt" é obrigatório.' });
+    }
     try {
       const res = await axios
         .post('http://localhost:3001/chat', { prompt })
         console.log('resposta da API: ', res)
+
+        const newConversation = {
+          question: res.data.question,
+          answer: res.data.answer,
+          date: res.data.date
+        }
           setConversations((prev) => [
-           ...prev,
-           {question: res.data.question, answer: res.data.answer, date: res.data.date}
-         ])
+           ...prev, newConversation])
 
       setPrompt('');
     } catch (err) {
@@ -27,15 +42,6 @@ const Chat = () => {
       ]);
     }
   };
-
-  const getAllConversation = async (res) => {
-    res = await axios
-    .get('http://localhost:3001/fullconversation')
-    .then((response) => {
-      console.log(response)
-      return setConversations(response.data)
-    })
-  }
 
   return (
     <View style={styles.container}>
