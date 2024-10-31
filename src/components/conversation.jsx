@@ -22,7 +22,7 @@ const Chat = () => {
     }
     try {
       const res = await axios
-        .post('http://localhost:3001/chat', { prompt })
+        .post('http://localhost:3001/talktochat', { prompt })
         console.log('resposta da API: ', res)
 
         const newConversation = {
