@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import InferencePage from './src/pages/InferencePage'
-import ConversationPage from './src/pages/conversationPage'
+import ConversationPage from './src/pages/ConversationPage'
 
 const Stack = createStackNavigator()
 

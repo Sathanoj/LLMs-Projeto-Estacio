@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, Button } from 'react-native'
 
-const conversationPage = ({ navigation }) => {
+const ConversationPage = ({ navigation }) => {
   return (
     <View style={ styles.container }>
       <Text>Converse com o ChatGpt</Text>
@@ -10,7 +10,7 @@ const conversationPage = ({ navigation }) => {
   )
 }
 
-export default conversationPage
+export default ConversationPage
 
 
 const styles = StyleSheet.create({

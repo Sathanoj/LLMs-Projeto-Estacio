@@ -1,12 +1,30 @@
-Para rodar localmente siga esses passos.
-
-(requer que o node esteja instalado)
-
-# Dentro da pasta do projeto:
-
-### 1 - npm install
-
-### 2 - npx expo start
+# LLMs-Projeto-Estacio
 
 
-O Backend ainda está em processo de desenvolvimento. Porém você pode usar uma api própria e trocar os endereços locais conforme sua necessidade.
+## Pré-requisitos
+
+Certifique-se de ter o **Node.js** instalado para rodar o projeto localmente.
+
+## Instalação
+
+Para instalar e rodar o projeto localmente, siga os passos abaixo:
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Sathanoj/LLMs-Projeto-Estacio.git
+
+2. Vá até a pasta do projeto:
+    ```bash
+    cd LLMs-Projeto-Estacio
+
+3. Instale as dependências
+    ```bash
+    npm install
+
+4. Inicie o projeto com o Expo:
+    ```bash
+    npx expo start
+
+# Backend
+
+O backend ainda está em desenvolvimento. Se desejar, você pode utilizar uma API própria e ajustar os endereços de acordo com suas necessidades no código do projeto.
