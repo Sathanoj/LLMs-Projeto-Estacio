@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, ScrollView, Pressable } from 'react-native'
 import axios from 'axios'
 
 const Chat = () => {
@@ -45,15 +45,15 @@ const Chat = () => {
 
   return (
     <View style={styles.container}>
-      <View>
-        {conversations.map((item, index) => (
-          <View key={index} style={styles.conversation}>
-            <Text style={styles.question}>Pergunta: <Text>{item.question}</Text></Text>
-            <Text style={styles.answer}>Resposta: <Text>{item.answer}</Text></Text>
-            <Text>Data: {item.date}</Text>
-          </View>
-        ))}
-      </View>
+        <ScrollView >
+          {conversations.map((item, index) => (
+            <View key={index} style={styles.conversation}>
+              <Text style={styles.question}>Pergunta: <Text>{item.question}</Text></Text>
+              <Text style={styles.answer}>Resposta: <Text>{item.answer}</Text></Text>
+              <Text>Data: {item.date}</Text>
+            </View>
+          ))}
+        </ScrollView>
       <TextInput
         style={styles.textInput}
         multiline
@@ -63,18 +63,18 @@ const Chat = () => {
         placeholder="Sobre o que vamos conversar?"
       />
       <View style={styles.btnView}>
-        <TouchableOpacity
+        <Pressable
           style={styles.btn}
           onPress={handleSubmit}>
           <Text style={styles.text}>Enviar</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>
       <View style={styles.btnView}>
-        <TouchableOpacity
+        <Pressable
           style={styles.btn}
           onPress={getAllConversation}>
           <Text style={styles.text}>listar</Text>
-        </TouchableOpacity>
+        </Pressable>
       </View>       
     </View>
   );

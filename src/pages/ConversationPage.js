@@ -1,17 +1,18 @@
 import React from 'react'
-import { StyleSheet, View, Text, Button, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, Button, Pressable } from 'react-native'
 import Chat from '../components/conversation'
 
 const ConversationPage = ({ navigation }) => {
   return (
     <View style={ styles.container }>
         <Text>Converse com o ChatGpt</Text>
-        <Button title= 'Va para analise' onPress = { () => navigation.navigate('Inference') } />
-        <View>
-          <ScrollView>
+        <View style={{ height: 800 }}>
             <Chat />
-          </ScrollView>
         </View>
+        <Pressable 
+          title= 'Va para analise' onPress = { () => navigation.navigate('Inference') }>
+            Va para analise
+        </Pressable>
     </View>
   )
 }
