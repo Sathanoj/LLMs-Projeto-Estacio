@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
-import axios from 'axios';
+import React, { useState } from 'react'
+import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native'
+import axios from 'axios'
 
 const Chat = () => {
   const [prompt, setPrompt] = useState('');
@@ -45,7 +45,7 @@ const Chat = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.responseContainer}>
+      <View>
         {conversations.map((item, index) => (
           <View key={index} style={styles.conversation}>
             <Text style={styles.question}>Pergunta: <Text>{item.question}</Text></Text>
@@ -53,7 +53,7 @@ const Chat = () => {
             <Text>Data: {item.date}</Text>
           </View>
         ))}
-      </ScrollView>
+      </View>
       <TextInput
         style={styles.textInput}
         multiline
